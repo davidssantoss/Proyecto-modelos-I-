@@ -54,7 +54,7 @@ class Elfo(Personaje):
 class Ogro(Personaje):
     def __init__(self, attack):
         self._Attack = attack
-        print("soy un ogro")
+        print("soy un Ogro")
         self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
 
     def attack(self):
@@ -63,7 +63,7 @@ class Ogro(Personaje):
 class Hada(Personaje):
     def __init__(self, attack):
         self._Attack = attack
-        print("soy una hada")
+        print("Soy una Hada")
         self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
 
     def attack(self):
@@ -72,7 +72,7 @@ class Hada(Personaje):
 class Humano(Personaje):
     def __init__(self, attack):
         self._Attack = attack
-        print("soy un humano")
+        print("Soy un Humano")
         self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
 
     def attack(self):
@@ -81,7 +81,7 @@ class Humano(Personaje):
 class Mago(Personaje):
     def __init__(self, attack):
         self._Attack = attack
-        print("soy un Mago")
+        print("Soy un Mago")
         self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
 
     def attack(self):
