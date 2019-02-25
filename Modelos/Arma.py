@@ -24,28 +24,28 @@ class Arma():
 
 class ArmaElfo(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la arma del elfo"
+        self.nombreArma="Esta es la Arma del Elfo"
         self.imagenArma="<Nombre de la carpeta>/<Nombre del archivo>"
     def showWeapon(self):
         pass
 
 class ArmaHada(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la arma de la hada"
+        self.nombreArma="Esta es la Arma de la Hada"
         self.imagenArma="<Nombre de la carpeta>/<Nombre del archivo>"
     def showWeapon(self):
         pass
 
 class ArmaHumano(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la arma del humano"
+        self.nombreArma="Esta es la Arma del Humano"
         self.imagenArma="<Nombre de la carpeta>/<Nombre del archivo>"
     def showWeapon(self):
         pass
 
 class ArmaOgro(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la arma del ogro"
+        self.nombreArma="Esta es la Arma del Ogro"
         self.imagenArma="<Nombre de la carpeta>/<Nombre del archivo>"
     def showWeapon(self):
         pass
@@ -53,7 +53,7 @@ class ArmaOgro(Arma):
 
 class ArmaMago(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la arma del mago"
+        self.nombreArma="Esta es la Arma del Mago"
         self.imagenArma="<Nombre de la carpeta>/<Nombre del archivo>"
     def showWeapon(self):
         pass
