@@ -3,7 +3,7 @@
 '''
 
 from PersonajeCreator import *
-
+#Cadena de Responsabilidad
 # posible state
 
 class Handler():
