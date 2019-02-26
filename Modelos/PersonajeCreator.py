@@ -16,10 +16,8 @@ from Personaje import Mago
 class PersonajeCreator():
     def __init__(self):
         pass
-
     def factoryMethod(self):
         pass
-
     def CrearPersonaje(self):
         return self.factoryMethod()
 
@@ -27,34 +25,34 @@ class PersonajeCreator():
 class ElfoCreator(PersonajeCreator):
     def __init__ (self):
         pass
-
     def factoryMethod (self):
-        # return Elfo( un ataque )
-
-class HadaCreator(PersonajeCreator):
-    def __init__ (self):
         pass
-
-    def factoryMethod (self):
-        # return Hada( un ataque )
-
+        # return Elfo( un ataque )
+        
 class HumanoCreator(PersonajeCreator):
     def __init__ (self):
         pass
-
     def factoryMethod (self):
+        pass
         # return Humano( un ataque )
 
 class OgroCreator(PersonajeCreator):
     def __init__ (self):
         pass
-
     def factoryMethod (self):
+        pass
         # return Ogro( un ataque )
 
+class HadaCreator(PersonajeCreator):
+    def __init__ (self):
+        pass
+    def factoryMethod (self):
+        pass
+        # return Hada(un ataque)
+    
 class MagoCreator(PersonajeCreator):
     def __init__ (self):
         pass
-
     def factoryMethod (self):
+        pass
         # return Mago( un ataque )
