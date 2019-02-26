@@ -24,24 +24,24 @@ class Handler():
 class HandlerOpcDefault(Handler):
     def __init__(self):
         pass
-
     def handlerRequest(self, number):
         return PersonajeCreator()
 
+    
 class HandlerOpcUno(Handler):
     def __init__(self):
         pass
     def handlerRequest(self, number):
-        if(number = 1):
+        if(number==1):
             return ElfoCreator()
         else:
-            return self.sucesor.handlerRequest(number)
+            return self.succesor.handlerRequest(number)
 
 class HandlerOpcDos(Handler):
     def __init__(self):
         pass
     def handlerRequest(self, number):
-        if(number = 2):
+        if(number == 2):
             return HadaCreator()
         else:
             return self.sucesor.handlerRequest(number)
@@ -50,7 +50,7 @@ class HandlerOpcTres(Handler):
     def __init__(self):
         pass
     def handlerRequest(self, number):
-        if(number = 3):
+        if(number == 3):
             return HumanoCreator()
         else:
             return self.sucesor.handlerRequest(number)
@@ -59,7 +59,7 @@ class HandlerOpcCuatro(Handler):
     def __init__(self):
         pass
     def handlerRequest(self, number):
-        if(number = 4):
+        if(number == 4):
             return OgroCreator()
         else:
             return self.sucesor.handlerRequest(number)
@@ -68,7 +68,7 @@ class HandlerOpcCinco(Handler):
     def __init__(self):
         pass
     def handlerRequest(self, number):
-        if(number = 5):
+        if(number == 5):
             return MagoCreator()
         else:
             return self.sucesor.handlerRequest(number)
@@ -79,8 +79,7 @@ class DeterminarPersonaje():
     def __init__(self):
         pass
 
-    handlers = [HandlerOpcuno(), HandlerOpcDos(), HandlerOpcTres(), HandlerOpcCuatro()
-                HandlerOpcCinco(), HandlerOpcDefault()]
+    handlers = [HandlerOpcUno(), HandlerOpcDos(), HandlerOpcTres(), HandlerOpcCuatro(), HandlerOpcCinco(), HandlerOpcDefault()]
 
     def crearPersonaje(self, number):
         for i in range(0, len(self.handlers)-1,1):
