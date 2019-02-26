@@ -1,5 +1,5 @@
 from tkinter import *
-from EnlistCharacter import EnlistCharacter
+from EnlistPersonaje import *
 import pygame, sys
 from pygame.locals import *
 from random import randint
@@ -17,17 +17,16 @@ class charChooserGUI:
         label = Label(bg="#3a3a3a")
 
         # **** Title ****
-
         title = Label(text="Selecciona tu personaje.", font="times 24 bold italic", fg="#ffca1e", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
         # ***** Images ****
+
         img1 = PhotoImage(file="imagenes/Elfo.png")
         img2 = PhotoImage(file="imagenes/Mago.png")
         img3 = PhotoImage(file="imagenes/Humano.png")
         img4 = PhotoImage(file="imagenes/Ogro.png")
         img5 = PhotoImage(file="imagenes/Hada.png")
-        
 
         pelfo = Button(label, image=img1, command=lambda: self.chooseConjurer(master), bg="black")
         pelfo.image = img1
@@ -101,7 +100,7 @@ class charChooserGUI:
 
         root.destroy()
         root2 = Tk()
-        root2.title("Weapon Chooser")
+        root2.title("Eleccion Arma")
         root2.configure(bg="#191919")
         root2.minsize(width=1000, height=600)
 
@@ -110,7 +109,7 @@ class charChooserGUI:
         label = Label(bg="#3a3a3a")
         # **** Title ****
 
-        title = Label(text="Choose your weapon", font="times 24 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        title = Label(text="Seleccione su arma preferida.", font="times 24 bold italic", fg="#ffca1e", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
         # ***** Images ****
@@ -118,36 +117,39 @@ class charChooserGUI:
 
         if (raze1 == 1) or (raze1 == 5):
             image1 = PhotoImage(file="imagenes\ArmaElfo.png")
-            image2 = PhotoImage(file="weapons_witch\HeavenlyScepter.png")
-            image3 = PhotoImage(file="weapons_witch\Scepter.png")
+            image2 = PhotoImage(file="imagenes\ArmaElfo2.png")
+            image3 = PhotoImage(file="imagenes\ArmaElfo3.png")
             nameweapon = {1: "Epic Scepter", 2: "Heavenly Scepter", 3: "Scepter"}
             numweapon = {1: 1, 2: 2, 3: 3}
         if raze1 == 2:
             image1 = PhotoImage(file="imagenes\ArmaMago.png")
-            image2 = PhotoImage(file="weapons_demon\DamnBlade.png")
-            image3 = PhotoImage(file="weapons_demon\DragonHammer.png")
+            image2 = PhotoImage(file="imagenes\ArmaMago2.png")
+            image3 = PhotoImage(file="imagenes\ArmaMago3.png")
             nameweapon = {1: "Hades Sword", 2: "Damn Blade", 3: "Dragon Hammer"}
             numweapon = {1: 4, 2: 5, 3: 6}
         if raze1 == 3:
             image1 = PhotoImage(file="imagenes/ArmaHumano.png")
-            image2 = PhotoImage(file="weapons_goblin\Hammer.png")
-            image3 = PhotoImage(file="weapons_goblin\OdinSpear.png")
+            image2 = PhotoImage(file="imagenes\ArmaHumano2.png")
+            image3 = PhotoImage(file="imagenes\ArmaHumano3.png")
             nameweapon = {1: "Excalibur Sword", 2: "Hammer", 3: "Odin Spear"}
             numweapon = {1: 7, 2: 8, 3: 9}
         if raze1 == 4:
             image1 = PhotoImage(file="imagenes\ArmaOgro.png")
-            image2 = PhotoImage(file="weapons_orc\MortalDagger.png")
-            image3 = PhotoImage(file="weapons_orc\VampireSpear.png")
+            image2 = PhotoImage(file="imagenes\ArmaOgro2.png")
+            image3 = PhotoImage(file="imagenes\ArmaOgro3.png")
             nameweapon = {1: "Dragon Tail", 2: "Mortal Dagger", 3: "Vampire Spear"}
             numweapon = {1: 10, 2: 11, 3: 12}
 
-        pelfo = Button(label, image=image1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2), bg="black", activebackground="#222222")
+        pelfo = Button(label, image=image1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
         pelfo.image = image1
         pelfo.grid(row=0, padx=10, pady=5)
-        pmago = Button(label, image=image2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2),bg="black", activebackground="#222222")
+        pmago = Button(label, image=image2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
         pmago.image = image2
         pmago.grid(row=0, column=1, padx=10, pady=5)
-        phumano= Button(label, image=image3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2), bg="black", activebackground="#222222")
+        phumano= Button(label, image=image3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
         phumano.image = image3
         phumano.grid(row=0, column=2, padx=10, pady=5)
 
@@ -178,15 +180,16 @@ class charChooserGUI:
 
     def createChar(self, raze, weapon, nchar, root2):
 
+   
 
         root2.destroy()
 
-        creacion = EnlistCharacter()
-        creacion.createWeapon(weapon)
-        creacion.createAurora()
-        creacion.createCharacter(raze)
+        creacion = EnlistarPersonaje()
+        creacion.creararma(arma)
+        creacion.crearescudo()
+        creacion.crearPersonaje(raze)
 
-        creacion.BuildCharacter()
+        creacion.PersonajeBuilder()
 
         personaje1 = None
         personaje12 = None
@@ -202,15 +205,13 @@ class charChooserGUI:
             personaje1 = creacion.cloneCharacter()
             personaje12 = creacion.cloneCharacter()
             personaje13 = creacion.cloneCharacter()
-        imweapon = personaje1.getWeapon().getImageWeapon()
-        print(imweapon)
-        imchar = personaje1.getImage()
-        print(imchar)
-        imAurora = personaje1.getAurora()
-        print(imAurora)
-
-
-  
+        imweapon = personaje1.getArma().getImageArma()
+        print(soyarma)
+        imchar = personaje1.getImagen()
+        print(soy)
+        imAurora = personaje1.getEscudo()
+        print(soyescudo)
+        
         
         class BotonAtacar(pygame.sprite.Sprite):
             def __init__(self,imagen1,imagen2,x=-50,y=500):
@@ -228,26 +229,23 @@ class charChooserGUI:
                 self.rect=self.imagen_actual.get_rect()
                 self.rect.left,self.rect.top=(x,y)
 
-        
-
-     
-
-
 
         class Animation():
 
             pygame.init()
             ventana = pygame.display.set_mode((1024, 683))
+   
             pygame.display.set_caption("personajes")
 
             atras1=pygame.image.load("boton/button11.png")
             atras2=pygame.image.load("boton/button1.png")
 
             boton1=Boton(atras1,atras2,0,0)
-
+           
             r1=pygame.Rect(50,440,300,500)
             r2=pygame.Rect(400,440,300,500)
             r3=pygame.Rect(600,440,300,500)
+
             pX=0
             pY=0
             cont1=1000
@@ -346,7 +344,7 @@ class charChooserGUI:
             derecha = True
             
             
-           
+
             wood = pygame.image.load("efecto/2.png")
             while True:
                 ventana.fill(verde)
@@ -380,6 +378,8 @@ class charChooserGUI:
                         pygame.quit()
                         sys.exit()
                         pintar_rect=False
+                   
+
                 keys = pygame.key.get_pressed()
                 if keys[K_LEFT]:
                     positX -= velocidad
@@ -406,11 +406,11 @@ class charChooserGUI:
                     posX2 += velocidad
                     X2 += velocidad
                 if keys[K_SPACE]:
-                    SonidoEspada.play()
                     personaje1.attack()
                 fuente = pygame.font.Font("fuente/fuente.ttf",50)
                 text1="Vida del grupo:"+str(cont1)
-       
+                texto1= fuente.render(text1,1,(155,127,22))
+                ventana.blit(texto1,(500,50))
                 pygame.display.flip()
                 
                 pygame.display.update()
