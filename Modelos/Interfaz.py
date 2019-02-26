@@ -143,15 +143,15 @@ class charChooserGUI:
 
         label.pack()
 
-    def createChar(self, raze, weapon, nchar, root2):
+    def createChar(self, raze, arma, nchar, root2):
 
    
 
         root2.destroy()
 
         creacion = EnlistarPersonaje()
-        creacion.creararma(arma)
-        creacion.crearescudo()
+        creacion.crearArma(arma)
+        creacion.crearEscudo()
         creacion.crearPersonaje(raze)
 
         creacion.PersonajeBuilder()
