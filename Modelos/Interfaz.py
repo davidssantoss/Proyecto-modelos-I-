@@ -28,7 +28,7 @@ class charChooserGUI:
         img4 = PhotoImage(file="imagenes/Ogro.png")
         img5 = PhotoImage(file="imagenes/Hada.png")
 
-        pelfo = Button(label, image=img1, command=lambda: self.chooseConjurer(master), bg="black")
+        pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="black")
         pelfo.image = img1
         pelfo.grid(row=0, padx=7, pady=2)
         pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="black")
@@ -60,41 +60,6 @@ class charChooserGUI:
         # *** Adds the whole content that's on the label ***
         label.pack()
 
-    def chooseConjurer(self, root):
-
-        root.destroy()
-        root2 = Tk()
-        root2.title("Conjurer Chooser")
-        root2.configure(bg="#191919")
-        root2.minsize(width=660, height=460)
-
-        # *** Main content ***
-
-        label = Label(bg="#3a3a3a")
-
-        #*** Inner content ***
-
-        title = Label(text="Which side do you want to be? D:<", font="times 22 bold italic", fg="#ffca1e", bg="#3a3a3a")
-        title.pack(pady=(40, 0))
-
-        img1 = PhotoImage(file="images_characters/1.png")
-        img2 = PhotoImage(file="images_characters/5.png")
-
-        pelfo= Button(label, image=img1, command=lambda: self.chooseWeapon(1, root2), bg="black", highlightbackground="#222222")
-        pelfo.image = img1
-        pelfo.grid(row=0, padx=(40,40), pady=10)
-        pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(5, root2), bg="black")
-        pmago.image = img2
-        pmago.grid(row=0, column=1, padx=(40,40), pady=10)
-
-        # ****** Names *****
-
-        name1 = Label(label, text="Good  Witch", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
-        name1.grid(row=1, column=0)
-        name2 = Label(label, text="Evil Witch", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
-        name2.grid(row=1, column=1)
-
-        label.pack()
 
     def chooseWeapon(self, raze, root):
 
