@@ -27,13 +27,19 @@ class Personaje():
     def setEscudo(self, escudo):
         self.escudoNum = escudo
         if (escudo == 0):
-            self.escudo = "<Nombre de la carpeta>/<nombre de la imagen>"
+            self.escudo = "imagenes/EscudoHada.png"
 
         if (escudo == 1):
-            self.escudo = "<Nombre de la carpeta>/<nombre de la imagen>"
+            self.escudo = "imagenes/EscudoElfo.png"
 
         if (escudo == 2):
-            self.escudo = "<Nombre de la carpeta>/<nombre de la imagen>"
+            self.escudo = "imagenes/EscudoOgro.png"
+        
+        if (escudo == 3):
+            self.escudo = "imagenes/EscudoMago.png"
+            
+        if (escudo == 4):
+            self.escudo = "imagenes/EscudoHumano.png"
 
     def getEscudo(self):
         return self.escudo
@@ -46,7 +52,7 @@ class Elfo(Personaje):
     def __init__(self, attack):
         self.Attack = attack
         print ("Legolas ataca!!")
-        self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
+        self.imagen = "imagenes/Elfo.png"
 
     def attack(self):
         self._Attack.attack()
@@ -55,7 +61,7 @@ class Ogro(Personaje):
     def __init__(self, attack):
         self._Attack = attack
         print("soy un Ogro")
-        self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
+        self.imagen = "imagenes/Ogro.png"
 
     def attack(self):
         self._Attack.attack()
@@ -64,7 +70,7 @@ class Hada(Personaje):
     def __init__(self, attack):
         self._Attack = attack
         print("Soy una Hada")
-        self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
+        self.imagen = "imagenes/Hada.png"
 
     def attack(self):
         self._Attack.attack()
@@ -73,7 +79,7 @@ class Humano(Personaje):
     def __init__(self, attack):
         self._Attack = attack
         print("Soy un Humano")
-        self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
+        self.imagen = "imagenes/Humano.png"
 
     def attack(self):
         self._Attack.attack()
@@ -82,7 +88,7 @@ class Mago(Personaje):
     def __init__(self, attack):
         self._Attack = attack
         print("Soy un Mago")
-        self.imagen = "<Nombre de la carpeta>/<nombre de la imagen>"
+        self.imagen = "imagenes/Mago.png"
 
     def attack(self):
         self._Attack.attack()
