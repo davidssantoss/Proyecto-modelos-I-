@@ -26,7 +26,7 @@ class Escudo():
 class ElfoEscudo(Escudo):
     def __init__(self):
         self.nombreEscudo = "Escudo del Elfo"
-        self.imagenEscudo = "<nombre de la carpeta>/<nombre del archivo>"
+        self.imagenEscudo = "imagenes/EscudoElfo.png"
 
     def muestraEscudo(self):
         pass
@@ -34,7 +34,7 @@ class ElfoEscudo(Escudo):
 class HadaEscudo(Escudo):
     def __init__(self):
         self.nombreEscudo = "Escudo de la Hada"
-        self.imagenEscudo = "<nombre de la carpeta>/<nombre del archivo>"
+        self.imagenEscudo = "imagenes/EscudoHada.png"
 
     def muestraEscudo(self):
         pass
@@ -42,7 +42,7 @@ class HadaEscudo(Escudo):
 class HumanoEscudo(Escudo):
     def __init__(self):
         self.nombreEscudo = "Escudo del Humano"
-        self.imagenEscudo = "<nombre de la carpeta>/<nombre del archivo>"
+        self.imagenEscudo = "imagenes/EscudoHumano.png"
 
     def muestraEscudo(self):
         pass
@@ -50,7 +50,7 @@ class HumanoEscudo(Escudo):
 class OgroEscudo(Escudo):
     def __init__(self):
         self.nombreEscudo = "Escudo del Ogro"
-        self.imagenEscudo = "<nombre de la carpeta>/<nombre del archivo>"
+        self.imagenEscudo = "imagenes/EscudoOgro.png"
 
     def muestraEscudo(self):
         pass
@@ -58,7 +58,7 @@ class OgroEscudo(Escudo):
 class MagoEscudo(Escudo):
     def __init__(self):
         self.nombreEscudo = "Escudo del Mago"
-        self.imagenEscudo = "<nombre de la carpeta>/<nombre del archivo>"
+        self.imagenEscudo = "imagenes/EscudoMago.png"
 
     def muestraEscudo(self):
         pass
