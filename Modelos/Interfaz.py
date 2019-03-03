@@ -10,17 +10,17 @@ class charChooserGUI:
 
     def __init__(self, master):
 
-        # ***** Parent Window Size ****
+        # ***** Tamaño de la ventana ****
         master.minsize(width=1500, height=600)
         master.maxsize(width=1500, height=600)
 
         label = Label(bg="#3a3a3a")
 
-        # **** Title ****
+        # **** Titulo ****
         title = Label(text="Selecciona tu personaje.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
-        # ***** Images ****
+        # ***** Imagenes ****
 
         img1 = PhotoImage(file="imagenes/Elfo.png")
         img2 = PhotoImage(file="imagenes/Mago.png")
@@ -48,7 +48,7 @@ class charChooserGUI:
         phada.image = img5
         phada.grid(row=0, column=4, padx=6, pady=2)
 
-        # ****** Names *****
+        # ****** Nombres *****
 
         name1 = Label(label, text="Elfo", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name1.grid(row=1, column=0)
@@ -76,59 +76,63 @@ class charChooserGUI:
         # **** Content ***
 
         label = Label(bg="#3a3a3a")
-        # **** Title ****
+        # **** Titulo ****
 
-        title = Label(text="Seleccione su arma preferida.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        title = Label(text="Seleccione su arma.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
-        # ***** Images ****
+        # ***** Imagenes ****
         raze1 = raze
 
-        if (raze1 == 1) or (raze1 == 5):
-            image1 = PhotoImage(file="imagenes\ArmaElfo.png")
-            image2 = PhotoImage(file="imagenes\ArmaElfo2.png")
-            image3 = PhotoImage(file="imagenes\ArmaElfo3.png")
+        if raze1 == 1:
+            imagen1 = PhotoImage(file="imagenes\ArmaElfo.png")
+            imagen2 = PhotoImage(file="imagenes\ArmaElfo2.png")
+            imagen3 = PhotoImage(file="imagenes\ArmaElfo3.png")
             nameweapon = {1: "Arco Elfico", 2: "Cetro Elfico", 3: "Cetro elfico reforzado"}
             numweapon = {1: 1, 2: 2, 3: 3}
         if raze1 == 2:
-            image1 = PhotoImage(file="imagenes\ArmaMago.png")
-            image2 = PhotoImage(file="imagenes\ArmaMago2.png")
-            image3 = PhotoImage(file="imagenes\ArmaMago3.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaMago.png")
+            imagen2 = PhotoImage(file="imagenes\ArmaMago2.png")
+            imagen3 = PhotoImage(file="imagenes\ArmaMago3.png")
             nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
             numweapon = {1: 10, 2: 11, 3: 11}
         if raze1 == 3:
-            image1 = PhotoImage(file="imagenes/ArmaHumano.png")
-            image2 = PhotoImage(file="imagenes\ArmaHumano2.png")
-            image3 = PhotoImage(file="imagenes\ArmaHumano3.png")
+            imagen1 = PhotoImage(file="imagenes/ArmaHumano.png")
+            imagen2 = PhotoImage(file="imagenes\ArmaHumano2.png")
+            imagen3 = PhotoImage(file="imagenes\ArmaHumano3.png")
             nameweapon = {1: "Sable mortifero", 2: "Maza", 3: "Lanza sangrienta"}
             numweapon = {1: 5, 2: 6, 3: 7}
         if raze1 == 4:
-            image1 = PhotoImage(file="imagenes\ArmaOgro.png")
-            image2 = PhotoImage(file="imagenes\ArmaOgro2.png")
-            image3 = PhotoImage(file="imagenes\ArmaOgro3.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaOgro.png")
+            imagen2 = PhotoImage(file="imagenes\ArmaOgro2.png")
+            imagen3 = PhotoImage(file="imagenes\ArmaOgro3.png")
             nameweapon = {1: "Martillo de caverna", 2: "Daga mortal", 3: "Hacha maldita"}
             numweapon = {1: 8, 2: 9, 3: 10}
         if raze1 == 5:
-            image1 = PhotoImage(file="imagenes\ArmaHada.png")
-            image2 = PhotoImage(file="imagenes\ArmaMago2.png")
-            image3 = PhotoImage(file="imagenes\ArmaOgro2.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaHada.png")
+            imagen2 = PhotoImage(file="imagenes\ArmaMago2.png")
+            imagen3 = PhotoImage(file="imagenes\ArmaOgro2.png")
             nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
             numweapon = {1: 4, 2: 11, 3: 9}
+        #Se manejan tipos de personajes poniendo las diferentes armas
+        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raza, numweapon[1], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
+        personaje.image = imagen1
+        personaje.grid(row=0, padx=10, pady=5)
+        
+        
+        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raza, numweapon[2], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
+        personajev2.image = imagen2
+        personajev2.grid(row=0, column=1, padx=10, pady=5)
+        
+        
+        personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raza, numweapon[3], nCharVar.get(), root2),
+                       bg="black", activebackground="#222222")
+        personajev3.image = imagen3
+        personajev3.grid(row=0, column=2, padx=10, pady=5)
 
-        pelfo = Button(label, image=image1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
-                       bg="black", activebackground="#222222")
-        pelfo.image = image1
-        pelfo.grid(row=0, padx=10, pady=5)
-        pmago = Button(label, image=image2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2),
-                       bg="black", activebackground="#222222")
-        pmago.image = image2
-        pmago.grid(row=0, column=1, padx=10, pady=5)
-        phumano= Button(label, image=image3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2),
-                       bg="black", activebackground="#222222")
-        phumano.image = image3
-        phumano.grid(row=0, column=2, padx=10, pady=5)
-
-        # ****** Names *****
+        # ****** Nombres de las armas *****
 
         name1 = Label(label, text=nameweapon[1], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name1.grid(row=1, column=0)
@@ -137,7 +141,7 @@ class charChooserGUI:
         name3 = Label(label, text=nameweapon[3], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name3.grid(row=1, column=2)
 
-        # *** Adds the whole content that's on the label ***
+        # *** Agrega todo el contenido que esta en el label  ***
         nCharMsj = Label(label, text="Cuantos personajes desea", font="times 15 bold italic",
                          fg="#20ef1c", bg="#222222")
         nCharMsj.grid(row=2, column=0, columnspan=2, sticky=E)
@@ -153,7 +157,7 @@ class charChooserGUI:
 
         label.pack()
 
-    def createChar(self, raze, arma, nchar, root2):
+    def createChar(self, raza, arma, nchar, root2):
 
 
 
@@ -162,7 +166,7 @@ class charChooserGUI:
         creacion = EnlistarPersonaje()
         creacion.crearArma(arma)
         creacion.crearEscudo()
-        creacion.crearPersonaje(raze)
+        creacion.crearPersonaje(raza)
 
         creacion.PersonajeBuilder()
 

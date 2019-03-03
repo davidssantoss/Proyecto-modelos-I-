@@ -4,7 +4,7 @@
 
 from PersonajeCreator import *
 #Cadena de Responsabilidad
-# posible state
+
 
 class Handler():
     sucesor = None
@@ -74,20 +74,22 @@ class HandlerOpcCinco(Handler):
             return self.sucesor.handlerRequest(number)
 
 class DeterminarPersonaje():
-    crarPersonaje = None
+    crearPersonaje = None
     personaje = None
     def __init__(self):
         pass
 
-    handlers = [HandlerOpcUno(), HandlerOpcDos(), HandlerOpcTres(), HandlerOpcCuatro(), HandlerOpcCinco(), HandlerOpcDefault()]
+    handlers = [HandlerOpcUno(), HandlerOpcDos(), HandlerOpcTres(),
+                HandlerOpcCuatro(), HandlerOpcCinco(), HandlerOpcDefault()]
 
     def crearPersonaje(self, number):
+        
         for i in range(0, len(self.handlers)-1,1):
             self.handlers[i].setSucesor(self.handlers[i+1])
 
         self.crearPersonaje = self.handlers[0].handlerRequest(number)
 
-        self.personaje = self.crearPersonaje.crearPersonaje()
+        self.personaje = self.crearPersonaje.CrearPersonaje()
 
     def getPersonaje(self):
         return self.personaje
