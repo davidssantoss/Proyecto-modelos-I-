@@ -69,7 +69,7 @@ class charChooserGUI:
 
         root.destroy()
         root2 = Tk()
-        root2.title("Eleccion Arma")
+        root2.title("Seleccionar Arma")
         root2.configure(bg="#191919")
         root2.minsize(width=1000, height=550)
 
@@ -88,26 +88,32 @@ class charChooserGUI:
             image1 = PhotoImage(file="imagenes\ArmaElfo.png")
             image2 = PhotoImage(file="imagenes\ArmaElfo2.png")
             image3 = PhotoImage(file="imagenes\ArmaElfo3.png")
-            nameweapon = {1: "Epic Scepter", 2: "Heavenly Scepter", 3: "Scepter"}
+            nameweapon = {1: "Arco Elfico", 2: "Cetro Elfico", 3: "Cetro elfico reforzado"}
             numweapon = {1: 1, 2: 2, 3: 3}
         if raze1 == 2:
             image1 = PhotoImage(file="imagenes\ArmaMago.png")
             image2 = PhotoImage(file="imagenes\ArmaMago2.png")
             image3 = PhotoImage(file="imagenes\ArmaMago3.png")
-            nameweapon = {1: "Hades Sword", 2: "Damn Blade", 3: "Dragon Hammer"}
+            nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
             numweapon = {1: 4, 2: 5, 3: 6}
         if raze1 == 3:
             image1 = PhotoImage(file="imagenes/ArmaHumano.png")
             image2 = PhotoImage(file="imagenes\ArmaHumano2.png")
             image3 = PhotoImage(file="imagenes\ArmaHumano3.png")
-            nameweapon = {1: "Excalibur Sword", 2: "Hammer", 3: "Odin Spear"}
+            nameweapon = {1: "Sable mortifero", 2: "Maza", 3: "Lanza sangrienta"}
             numweapon = {1: 7, 2: 8, 3: 9}
         if raze1 == 4:
             image1 = PhotoImage(file="imagenes\ArmaOgro.png")
             image2 = PhotoImage(file="imagenes\ArmaOgro2.png")
             image3 = PhotoImage(file="imagenes\ArmaOgro3.png")
-            nameweapon = {1: "Dragon Tail", 2: "Mortal Dagger", 3: "Vampire Spear"}
+            nameweapon = {1: "Martillo de caverna", 2: "Daga mortal", 3: "Hacha maldita"}
             numweapon = {1: 10, 2: 11, 3: 12}
+        if raze1 == 5:
+            image1 = PhotoImage(file="imagenes\ArmaHada.png")
+            image2 = PhotoImage(file="imagenes\ArmaMago2.png")
+            image3 = PhotoImage(file="imagenes\ArmaOgro2.png")
+            nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
+            numweapon = {1: 13, 2: 14, 3: 15}
 
         pelfo = Button(label, image=image1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
                        bg="black", activebackground="#222222")
@@ -132,16 +138,16 @@ class charChooserGUI:
         name3.grid(row=1, column=2)
 
         # *** Adds the whole content that's on the label ***
-        nCharMsj = Label(label, text="Choose how many characters you want :)", font="times 15 bold italic",
-                         fg="#ffca1e", bg="#222222")
+        nCharMsj = Label(label, text="Cuantos personajes desea", font="times 15 bold italic",
+                         fg="#20ef1c", bg="#222222")
         nCharMsj.grid(row=2, column=0, columnspan=2, sticky=E)
 
         nCharVar = StringVar(label)
         nCharVar.set("1")
-        nChar = ["1", "2", "3"]
+        nChar = ["1", "2"]
 
         nCharMenu = OptionMenu(label, nCharVar, *nChar)
-        nCharMenu.config(width=5, font="times 15 bold italic", fg="#ffca1e", bg="#2d2d2d",
+        nCharMenu.config(width=5, font="times 15 bold italic", fg="#20ef1c", bg="#2d2d2d",
                          highlightbackground="#000000", activebackground="#222222")
         nCharMenu.grid(row=2, column=2, pady=30)
 
@@ -161,19 +167,14 @@ class charChooserGUI:
         creacion.PersonajeBuilder()
 
         personaje1 = None
-        personaje12 = None
-        personaje13 = None
+        personaje2 = None
 
         if nchar == "1":
             personaje1 = creacion.cloneCharacter()
 
         if nchar == "2":
             personaje1 = creacion.cloneCharacter()
-            personaje12 = creacion.cloneCharacter()
-        if nchar == "3":
-            personaje1 = creacion.cloneCharacter()
-            personaje12 = creacion.cloneCharacter()
-            personaje13 = creacion.cloneCharacter()
+            personaje2 = creacion.cloneCharacter()
         imweapon = personaje1.getArma().getImageArma()
         print(soyarma)
         imchar = personaje1.getImagen()
@@ -329,16 +330,7 @@ class charChooserGUI:
                     ventana.blit(imagen_aurora, (positX1, positY1))
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
-                if nchar == "3":
-                    ventana.blit(imagen_aurora, (positX, positY))
-                    ventana.blit(imagen_personaje, (posX, posY))
-                    ventana.blit(imagen_arma, (X, Y))
-                    ventana.blit(imagen_aurora, (positX1, positY1))
-                    ventana.blit(imagen_personaje, (posX1, posY1))
-                    ventana.blit(imagen_arma, (X1, Y1))
-                    ventana.blit(imagen_aurora, (positX2, positY2))
-                    ventana.blit(imagen_personaje, (posX2, posY2))
-                    ventana.blit(imagen_arma, (X2, Y2))
+                
 
                 ventana.blit(wood, (450,-70))
 
@@ -366,18 +358,13 @@ class charChooserGUI:
                     positX1 += velocidad
                     posX1 += velocidad
                     X1 += velocidad
-                if keys [K_j]:
-                    positX2 -= velocidad
-                    X2 -= velocidad
-                    posX2 -= velocidad
-                elif keys [K_l]:
-                    positX2 += velocidad
-                    posX2 += velocidad
-                    X2 += velocidad
                 if keys[K_SPACE]:
                     personaje1.attack()
+                elif keys[K_p]:
+                    personaje2.attack()
+                    
                 fuente = pygame.font.Font("fuente/fuente.ttf",50)
-                text1="Vida del grupo:"+str(cont1)
+                text1="Vida del personaje1:"+str(cont1)
                 texto1= fuente.render(text1,1,(155,127,22))
                 ventana.blit(texto1,(500,50))
                 pygame.display.flip()
@@ -389,9 +376,9 @@ class charChooserGUI:
 # *** Defines window ***
 
 root = Tk()
-root.title("Character chooser")
+root.title("Escoger personaje")
 root.configure(bg="#191919")
 
-charChooser = charChooserGUI(root)
+escogerPersonaje = charChooserGUI(root)
 
 root.mainloop()
