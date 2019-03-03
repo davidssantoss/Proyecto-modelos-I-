@@ -44,7 +44,7 @@ class charChooserGUI:
         pogro.image = img4
         pogro.grid(row=0, column=3, padx=6, pady=2)
 
-        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(4, master), bg="black")
+        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(5, master), bg="black")
         phada.image = img5
         phada.grid(row=0, column=4, padx=6, pady=2)
 
@@ -95,25 +95,25 @@ class charChooserGUI:
             image2 = PhotoImage(file="imagenes\ArmaMago2.png")
             image3 = PhotoImage(file="imagenes\ArmaMago3.png")
             nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
-            numweapon = {1: 4, 2: 5, 3: 6}
+            numweapon = {1: 10, 2: 11, 3: 11}
         if raze1 == 3:
             image1 = PhotoImage(file="imagenes/ArmaHumano.png")
             image2 = PhotoImage(file="imagenes\ArmaHumano2.png")
             image3 = PhotoImage(file="imagenes\ArmaHumano3.png")
             nameweapon = {1: "Sable mortifero", 2: "Maza", 3: "Lanza sangrienta"}
-            numweapon = {1: 7, 2: 8, 3: 9}
+            numweapon = {1: 5, 2: 6, 3: 7}
         if raze1 == 4:
             image1 = PhotoImage(file="imagenes\ArmaOgro.png")
             image2 = PhotoImage(file="imagenes\ArmaOgro2.png")
             image3 = PhotoImage(file="imagenes\ArmaOgro3.png")
             nameweapon = {1: "Martillo de caverna", 2: "Daga mortal", 3: "Hacha maldita"}
-            numweapon = {1: 10, 2: 11, 3: 12}
+            numweapon = {1: 8, 2: 9, 3: 10}
         if raze1 == 5:
             image1 = PhotoImage(file="imagenes\ArmaHada.png")
             image2 = PhotoImage(file="imagenes\ArmaMago2.png")
             image3 = PhotoImage(file="imagenes\ArmaOgro2.png")
             nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
-            numweapon = {1: 13, 2: 14, 3: 15}
+            numweapon = {1: 4, 2: 11, 3: 9}
 
         pelfo = Button(label, image=image1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
                        bg="black", activebackground="#222222")
@@ -214,13 +214,11 @@ class charChooserGUI:
 
             r1=pygame.Rect(50,440,300,500)
             r2=pygame.Rect(400,440,300,500)
-            r3=pygame.Rect(600,440,300,500)
 
             pX=0
             pY=0
             cont1=1000
             cont2=1000
-            cont3=1000
             imagen_arma = pygame.image.load(imweapon)
 
             imagen_personaje = pygame.image.load(imchar)
@@ -339,6 +337,7 @@ class charChooserGUI:
                         pygame.quit()
                         sys.exit()
                         pintar_rect=False
+                    #Agregar el contador para cuando se pierda vida y muera e inmediatamente finalice el juego
 
 
                 keys = pygame.key.get_pressed()
@@ -364,9 +363,12 @@ class charChooserGUI:
                     personaje2.attack()
                     
                 fuente = pygame.font.Font("fuente/fuente.ttf",50)
-                text1="Vida del personaje1:"+str(cont1)
-                texto1= fuente.render(text1,1,(155,127,22))
+                text1="Vida del personaje 1:"+str(cont1)
+                text2="Vida del personaje 2:"+str(cont2)
+                texto1 = fuente.render(text1,1,(155,127,22))
+                texto2 = fuente.render(text2,1,(155,155,22))
                 ventana.blit(texto1,(500,50))
+                ventana.blit(texto2,(500,80))
                 pygame.display.flip()
 
                 pygame.display.update()
