@@ -11,13 +11,13 @@ class charChooserGUI:
     def __init__(self, master):
 
         # ***** Parent Window Size ****
-        master.minsize(width=2000, height=1000)
-        master.maxsize(width=2000, height=1000)
+        master.minsize(width=1500, height=600)
+        master.maxsize(width=1500, height=600)
 
         label = Label(bg="#3a3a3a")
 
         # **** Title ****
-        title = Label(text="Selecciona tu personaje.", font="times 24 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        title = Label(text="Selecciona tu personaje.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
         # ***** Images ****
@@ -30,31 +30,35 @@ class charChooserGUI:
 
         pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="black")
         pelfo.image = img1
-        pelfo.grid(row=0, padx=7, pady=2)
+        pelfo.grid(row=0, column = 0, padx=6, pady=2)
+
         pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="black")
         pmago.image = img2
-        pmago.grid(row=0, column=1, padx=7, pady=2)
+        pmago.grid(row=0, column=1, padx=6, pady=2)
+
         phumano= Button(label, image=img3, command=lambda: self.chooseWeapon(3, master), bg="black")
         phumano.image = img3
-        phumano.grid(row=0, column=2, padx=7, pady=2)
+        phumano.grid(row=0, column=2, padx=6, pady=2)
+
         pogro = Button(label, image=img4, command=lambda: self.chooseWeapon(4, master), bg="black")
         pogro.image = img4
-        pogro.grid(row=0, column=3, padx=7, pady=2)
+        pogro.grid(row=0, column=3, padx=6, pady=2)
+
         phada = Button(label, image=img5, command=lambda: self.chooseWeapon(4, master), bg="black")
         phada.image = img5
-        phada.grid(row=0, column=4, padx=7, pady=2)
+        phada.grid(row=0, column=4, padx=6, pady=2)
 
         # ****** Names *****
 
-        name1 = Label(label, text="Elfo", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name1 = Label(label, text="Elfo", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name1.grid(row=1, column=0)
-        name2 = Label(label, text="Mago", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name2 = Label(label, text="Mago", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name2.grid(row=1, column=1)
-        name3 = Label(label, text="Humano", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name3 = Label(label, text="Humano", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name3.grid(row=1, column=2)
-        name4 = Label(label, text="Ogro", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name4 = Label(label, text="Ogro", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name4.grid(row=1, column=3)
-        name5 = Label(label, text="Hada", font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name5 = Label(label, text="Hada", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name5.grid(row=1, column=4)
 
         # *** Adds the whole content that's on the label ***
@@ -67,14 +71,14 @@ class charChooserGUI:
         root2 = Tk()
         root2.title("Eleccion Arma")
         root2.configure(bg="#191919")
-        root2.minsize(width=1000, height=600)
+        root2.minsize(width=1000, height=550)
 
         # **** Content ***
 
         label = Label(bg="#3a3a3a")
         # **** Title ****
 
-        title = Label(text="Seleccione su arma preferida.", font="times 24 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        title = Label(text="Seleccione su arma preferida.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
         title.pack(pady=(50, 0))
 
         # ***** Images ****
@@ -120,11 +124,11 @@ class charChooserGUI:
 
         # ****** Names *****
 
-        name1 = Label(label, text=nameweapon[1], font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name1 = Label(label, text=nameweapon[1], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name1.grid(row=1, column=0)
-        name2 = Label(label, text=nameweapon[2], font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name2 = Label(label, text=nameweapon[2], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name2.grid(row=1, column=1)
-        name3 = Label(label, text=nameweapon[3], font="times 10 bold italic", fg="#ffca1e", bg="#3a3a3a")
+        name3 = Label(label, text=nameweapon[3], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name3.grid(row=1, column=2)
 
         # *** Adds the whole content that's on the label ***
@@ -145,7 +149,7 @@ class charChooserGUI:
 
     def createChar(self, raze, arma, nchar, root2):
 
-   
+
 
         root2.destroy()
 
@@ -176,8 +180,8 @@ class charChooserGUI:
         print(soy)
         imAurora = personaje1.getEscudo()
         print(soyescudo)
-        
-        
+
+
         class BotonAtacar(pygame.sprite.Sprite):
             def __init__(self,imagen1,imagen2,x=-50,y=500):
                 self.imagen_normal=imagen1
@@ -199,14 +203,14 @@ class charChooserGUI:
 
             pygame.init()
             ventana = pygame.display.set_mode((1024, 683))
-   
+
             pygame.display.set_caption("personajes")
 
             atras1=pygame.image.load("boton/button11.png")
             atras2=pygame.image.load("boton/button1.png")
 
             boton1=Boton(atras1,atras2,0,0)
-           
+
             r1=pygame.Rect(50,440,300,500)
             r2=pygame.Rect(400,440,300,500)
             r3=pygame.Rect(600,440,300,500)
@@ -220,11 +224,11 @@ class charChooserGUI:
 
             imagen_personaje = pygame.image.load(imchar)
             imagen_aurora = pygame.image.load(imAurora)
-            
+
 
 
             if (raze == 1) or (raze == 5):
-                
+
                 X = 90
                 Y = 310
                 X1 = 340
@@ -243,7 +247,7 @@ class charChooserGUI:
                 positY1 = 260
                 positX2 = 485
                 positY2 = 260
-                
+
             if raze == 2:
                 X = 28
                 Y = 345
@@ -307,8 +311,8 @@ class charChooserGUI:
             velocidad = 5
             verde = (0, 255, 0)
             derecha = True
-            
-            
+
+
 
             wood = pygame.image.load("efecto/2.png")
             while True:
@@ -335,7 +339,7 @@ class charChooserGUI:
                     ventana.blit(imagen_aurora, (positX2, positY2))
                     ventana.blit(imagen_personaje, (posX2, posY2))
                     ventana.blit(imagen_arma, (X2, Y2))
-  
+
                 ventana.blit(wood, (450,-70))
 
                 for event in pygame.event.get():
@@ -343,7 +347,7 @@ class charChooserGUI:
                         pygame.quit()
                         sys.exit()
                         pintar_rect=False
-                   
+
 
                 keys = pygame.key.get_pressed()
                 if keys[K_LEFT]:
@@ -377,7 +381,7 @@ class charChooserGUI:
                 texto1= fuente.render(text1,1,(155,127,22))
                 ventana.blit(texto1,(500,50))
                 pygame.display.flip()
-                
+
                 pygame.display.update()
 
 
