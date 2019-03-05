@@ -9,7 +9,7 @@ from EscudoCreator import OgroEscudoCreator
 from EscudoCreator import MagoEscudoCreator
 
 class DeterminarEscudo():
-    crearEscudo = None
+    crearescudo = None
     escudo = None
     def __init__ (self):
         pass

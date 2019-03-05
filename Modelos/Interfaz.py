@@ -1,5 +1,5 @@
 from tkinter import *
-from EnlistPersonaje import *
+from EnlistPersonaje import EnlistarPersonaje
 import pygame, sys
 from pygame.locals import *
 from random import randint
@@ -30,7 +30,7 @@ class charChooserGUI:
 
         pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="black")
         pelfo.image = img1
-        pelfo.grid(row=0, column = 0, padx=6, pady=2)
+        pelfo.grid(row=0, padx=6, pady=2)
 
         pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="black")
         pmago.image = img2
@@ -97,7 +97,7 @@ class charChooserGUI:
             nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
             numweapon = {1: 10, 2: 11, 3: 11}
         if raze1 == 3:
-            imagen1 = PhotoImage(file="imagenes/ArmaHumano.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaHumano.png")
             imagen2 = PhotoImage(file="imagenes\ArmaHumano2.png")
             imagen3 = PhotoImage(file="imagenes\ArmaHumano3.png")
             nameweapon = {1: "Sable mortifero", 2: "Maza", 3: "Lanza sangrienta"}
@@ -115,19 +115,19 @@ class charChooserGUI:
             nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
             numweapon = {1: 4, 2: 11, 3: 9}
         #Se manejan tipos de personajes poniendo las diferentes armas
-        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raza, numweapon[1], nCharVar.get(), root2),
+        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
                        bg="black", activebackground="#222222")
         personaje.image = imagen1
         personaje.grid(row=0, padx=10, pady=5)
         
         
-        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raza, numweapon[2], nCharVar.get(), root2),
+        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2),
                        bg="black", activebackground="#222222")
         personajev2.image = imagen2
         personajev2.grid(row=0, column=1, padx=10, pady=5)
         
         
-        personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raza, numweapon[3], nCharVar.get(), root2),
+        personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2),
                        bg="black", activebackground="#222222")
         personajev3.image = imagen3
         personajev3.grid(row=0, column=2, padx=10, pady=5)
@@ -168,17 +168,17 @@ class charChooserGUI:
         creacion.crearEscudo()
         creacion.crearPersonaje(raza)
 
-        creacion.PersonajeBuilder()
+        creacion.BuildPersonaje()
 
         personaje1 = None
         personaje2 = None
 
         if nchar == "1":
-            personaje1 = creacion.cloneCharacter()
+            personaje1 = creacion.clonePersonaje()
 
         if nchar == "2":
-            personaje1 = creacion.cloneCharacter()
-            personaje2 = creacion.cloneCharacter()
+            personaje1 = creacion.clonePersonaje()
+            personaje2 = creacion.clonePersonaje()
         imweapon = personaje1.getArma().getImageArma()
         print(soyarma)
         imchar = personaje1.getImagen()
@@ -202,6 +202,13 @@ class charChooserGUI:
                 self.imagen_actual=self.imagen_normal
                 self.rect=self.imagen_actual.get_rect()
                 self.rect.left,self.rect.top=(x,y)
+
+            def update(self,pantalla,cursor):
+                if cursor.colliderect(self.rect):
+                    self.imagen_actual=self.imagen_seleccion
+                else: self.imagen_actual=self.imagen_normal
+
+                pantalla.blit(self.imagen_actual,self.rect)            
 
 
         class Animation():

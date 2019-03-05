@@ -74,7 +74,7 @@ class HandlerOpcCinco(Handler):
             return self.sucesor.handlerRequest(number)
 
 class DeterminarPersonaje():
-    crearPersonaje = None
+    crearpersonaje = None
     personaje = None
     def __init__(self):
         pass
@@ -87,9 +87,9 @@ class DeterminarPersonaje():
         for i in range(0, len(self.handlers)-1,1):
             self.handlers[i].setSucesor(self.handlers[i+1])
 
-        self.crearPersonaje = self.handlers[0].handlerRequest(number)
+        self.crearpersonaje = self.handlers[0].handlerRequest(number)
 
-        self.personaje = self.crearPersonaje.CrearPersonaje()
+        self.personaje = self.crearpersonaje.CrearPersonaje()
 
     def getPersonaje(self):
         return self.personaje

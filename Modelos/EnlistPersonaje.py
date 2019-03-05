@@ -17,19 +17,20 @@ class EnlistarPersonaje:
     determinarEscudo = None
     constructorPersonaje = None
     armarPersonaje = None
+    personajesclonados = None
 
     def __init__(self):
         self.determinarPersonaje = DeterminarPersonaje()
         self.determinarArma = DeterminarArma()
-        self.determinarEscudo = Personaje()
+        self.determinarescudo = Personaje()
         self.constructorPersonaje = PersonajeBuilder()
         self.armarPersonaje = Director()
 
 
     def generarChakra(func):
-        x = randint(0,3)
-        def wrapper(func):
-            func(self,x)
+        x = randint(0,4)
+        def wrapper(self):
+            func(self, x)
             return func
         return wrapper
 
@@ -40,7 +41,7 @@ class EnlistarPersonaje:
     @generarChakra  #Patron decorator
     def crearEscudo(self, number):
         print(str(number))
-        self.determinarEscudo.setEscudo(number)
+        self.determinarescudo.setEscudo(number)
 
     def crearPersonaje(self, number):
         self.determinarPersonaje.crearPersonaje(number)
@@ -51,7 +52,9 @@ class EnlistarPersonaje:
                                            self.determinarArma.getArma(),
                                            self.determinarEscudo.getEscudoNum())
 
-
+    def clonePersonaje(self):
+        self.personajesclonados = self.armarPersonaje.getPersonaje()
+        return self.personajesclonados.clone()
 
 
                                            
