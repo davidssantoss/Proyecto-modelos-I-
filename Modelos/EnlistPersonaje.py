@@ -50,7 +50,7 @@ class EnlistarPersonaje:
         self.armarPersonaje.setBuilder(self.constructorPersonaje)
         self.armarPersonaje.BuildPersonaje(self.determinarPersonaje.getPersonaje(),
                                            self.determinarArma.getArma(),
-                                           self.determinarEscudo.getEscudoNum())
+                                           self.determinarescudo.getEscudoNum())
 
     def clonePersonaje(self):
         self.personajesclonados = self.armarPersonaje.getPersonaje()

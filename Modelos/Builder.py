@@ -31,7 +31,7 @@ class PersonajeBuilder(Builder):
     def buildPersonaje(self, personaje):
         self.personaje = personaje
 
-    def buildArma(self, arna):
+    def buildArma(self, arma):
         self.personaje.setArma(arma)
 
     def buildEscudo(self, escudo):
