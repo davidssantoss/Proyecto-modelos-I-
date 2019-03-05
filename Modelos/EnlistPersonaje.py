@@ -14,7 +14,7 @@ from Personaje import *
 class EnlistarPersonaje:
     determinarPersonaje = None
     determinarArma = None
-    determinarEscudo = None
+    determinarescudo = None
     constructorPersonaje = None
     armarPersonaje = None
     personajesclonados = None
@@ -48,9 +48,7 @@ class EnlistarPersonaje:
 
     def BuildPersonaje(self):
         self.armarPersonaje.setBuilder(self.constructorPersonaje)
-        self.armarPersonaje.BuildPersonaje(self.determinarPersonaje.getPersonaje(),
-                                           self.determinarArma.getArma(),
-                                           self.determinarescudo.getEscudoNum())
+        self.armarPersonaje.BuildPersonaje(self.determinarPersonaje.getPersonaje(), self.determinarArma.getArma(), self.determinarescudo.getEscudoNum())
 
     def clonePersonaje(self):
         self.personajesclonados = self.armarPersonaje.getPersonaje()

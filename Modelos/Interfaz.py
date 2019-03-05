@@ -10,7 +10,7 @@ class charChooserGUI:
 
     def __init__(self, master):
 
-        # ***** Tamaño de la ventana ****
+        # ***** Tamano de la ventana ****
         master.minsize(width=1500, height=600)
         master.maxsize(width=1500, height=600)
 
@@ -115,19 +115,18 @@ class charChooserGUI:
             nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
             numweapon = {1: 4, 2: 11, 3: 9}
         #Se manejan tipos de personajes poniendo las diferentes armas
-        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2),
-                       bg="black", activebackground="#222222")
+        
+        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2), bg="black", activebackground="#222222")
         personaje.image = imagen1
         personaje.grid(row=0, padx=10, pady=5)
         
         
-        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2),
-                       bg="black", activebackground="#222222")
+        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2), bg="black", activebackground="#222222")
         personajev2.image = imagen2
         personajev2.grid(row=0, column=1, padx=10, pady=5)
         
         
-        personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2),
+        personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2), 
                        bg="black", activebackground="#222222")
         personajev3.image = imagen3
         personajev3.grid(row=0, column=2, padx=10, pady=5)

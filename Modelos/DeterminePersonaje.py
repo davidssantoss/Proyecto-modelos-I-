@@ -35,7 +35,7 @@ class HandlerOpcUno(Handler):
         if(number==1):
             return ElfoCreator()
         else:
-            return self.succesor.handlerRequest(number)
+            return self.sucesor.handlerRequest(number)
 
 class HandlerOpcDos(Handler):
     def __init__(self):
