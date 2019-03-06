@@ -17,9 +17,13 @@ class Misil(pygame.sprite.Sprite):
         self.velocidadDisparo = 20
         self.rect.top=posY
         self.rect.left=posX
+        self.rect.right=posX
     #funcion para determinar el desplazamiento del misil
     def recorrido(self):
         self.rect.left=self.rect.left+self.velocidadDisparo
+
+    def recorrido2(self):
+        self.rect.right = self.rect.right + self.velocidadDisparo
     #funcion para dibujar el misil
     def dibujar(self,superficie):
         superficie.blit(self.imagenMisil,self.rect)

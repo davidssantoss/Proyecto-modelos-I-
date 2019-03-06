@@ -33,7 +33,7 @@ class charChooserGUI:
         pelfo.grid(row=0, padx=6, pady=2)
         print("pelfo: ",pelfo)
 
-        pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="#eac98f")
+        pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(5, master), bg="#eac98f")
         pmago.image = img2
         pmago.grid(row=0, column=1, padx=6, pady=2)
 
@@ -45,7 +45,7 @@ class charChooserGUI:
         pogro.image = img4
         pogro.grid(row=0, column=3, padx=6, pady=2)
 
-        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(5, master), bg="#eac98f")
+        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(2, master), bg="#eac98f")
         phada.image = img5
         phada.grid(row=0, column=4, padx=6, pady=2)
 
@@ -92,11 +92,11 @@ class charChooserGUI:
             nameweapon = {1: "Arco Elfico", 2: "Cetro Elfico", 3: "Cetro elfico reforzado"}
             numweapon = {1: 1, 2: 2, 3: 3}
         if raze1 == 2:
-            imagen1 = PhotoImage(file="imagenes\ArmaMago.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaHada.png")
             imagen2 = PhotoImage(file="imagenes\ArmaMago2.png")
-            imagen3 = PhotoImage(file="imagenes\ArmaMago3.png")
-            nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
-            numweapon = {1: 10, 2: 11, 3: 11}
+            imagen3 = PhotoImage(file="imagenes\ArmaOgro2.png")
+            nameweapon = {1: "varita", 2: "Espada maldita", 3: "Daga mortal"}
+            numweapon = {1:4, 2: 11, 3: 9}
         if raze1 == 3:
             imagen1 = PhotoImage(file="imagenes\ArmaHumano.png")
             imagen2 = PhotoImage(file="imagenes\ArmaHumano2.png")
@@ -110,11 +110,11 @@ class charChooserGUI:
             nameweapon = {1: "Martillo de caverna", 2: "Daga mortal", 3: "Hacha maldita"}
             numweapon = {1: 8, 2: 9, 3: 10}
         if raze1 == 5:
-            imagen1 = PhotoImage(file="imagenes\ArmaHada.png")
+            imagen1 = PhotoImage(file="imagenes\ArmaMago.png")
             imagen2 = PhotoImage(file="imagenes\ArmaMago2.png")
-            imagen3 = PhotoImage(file="imagenes\ArmaOgro2.png")
-            nameweapon = {1: "varita", 2: "Espada maldita", 3: "Daga mortal"}
-            numweapon = {1: 4, 2: 11, 3: 9}
+            imagen3 = PhotoImage(file="imagenes\ArmaMago3.png")
+            nameweapon = {1: "Baculo", 2: "Espada maldita", 3: "Martillo del dragon"}
+            numweapon = {1: 10, 2: 11, 3: 12}
         #Se manejan tipos de personajes poniendo las diferentes armas
         #print ("seleccionada",raze)
         personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze,
@@ -352,6 +352,14 @@ class charChooserGUI:
                         #x.colision(personaje1)
                         if x.rect.left<-10:
                             personaje1.listaDisparo.remove(x)
+
+                if len(personaje2.listaDisparo)>0:
+                    for x in personaje2.listaDisparo:
+                        x.dibujar(ventana)
+                        x.recorrido2()
+                        #x.colision(personaje1)
+                        if x.rect.right<10:
+                            personaje2.listaDisparo.remove(x)
                 
                 
 
