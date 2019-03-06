@@ -222,10 +222,10 @@ class charChooserGUI:
 
             pygame.display.set_caption("personajes")
 
-            atras1=pygame.image.load("boton/button11.png")
-            atras2=pygame.image.load("boton/button1.png")
+            atras1=pygame.image.load("imagenes/botonV.png")
+            atras2=pygame.image.load("imagenes/botonV.png")
 
-            boton1=Boton(atras1,atras2,0,0)
+            boton1=Boton(atras1, atras2, 0, 0)
 
             r1=pygame.Rect(50,440,300,500)
             r2=pygame.Rect(400,440,300,500)
@@ -328,7 +328,7 @@ class charChooserGUI:
 
 
 
-            wood = pygame.image.load("efecto/2.png")
+            #wood = pygame.image.load("imagenes/2.png")
             while True:
                 ventana.fill(verde)
                 ventana.blit(fondo, (0, 0))
@@ -345,7 +345,7 @@ class charChooserGUI:
                     ventana.blit(imagen_arma, (X1, Y1))
                 
 
-                ventana.blit(wood, (450,-70))
+                #ventana.blit(wood, (450,-70))
 
                 for event in pygame.event.get():
                     if event.type == QUIT:
