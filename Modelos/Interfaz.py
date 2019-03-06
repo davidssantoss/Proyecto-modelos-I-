@@ -11,13 +11,13 @@ class charChooserGUI:
     def __init__(self, master):
 
         # ***** Tamano de la ventana ****
-        master.minsize(width=1500, height=600)
-        master.maxsize(width=1500, height=600)
+        master.minsize(width=1300, height=500)
+        master.maxsize(width=1300, height=500)
 
-        label = Label(bg="#3a3a3a")
+        label = Label(bg="#aa6612")
 
         # **** Titulo ****
-        title = Label(text="Selecciona tu personaje.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        title = Label(text="Selecciona tu personaje.", font="courier 24 bold italic", fg="#eac98f", bg="#aa6612")
         title.pack(pady=(50, 0))
 
         # ***** Imagenes ****
@@ -28,38 +28,38 @@ class charChooserGUI:
         img4 = PhotoImage(file="imagenes/Ogro.png")
         img5 = PhotoImage(file="imagenes/Hada.png")
 
-        pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="black")
+        pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="#eac98f")
         pelfo.image = img1
         pelfo.grid(row=0, padx=6, pady=2)
         print("pelfo: ",pelfo)
 
-        pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="black")
+        pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="#eac98f")
         pmago.image = img2
         pmago.grid(row=0, column=1, padx=6, pady=2)
 
-        phumano= Button(label, image=img3, command=lambda: self.chooseWeapon(3, master), bg="black")
+        phumano= Button(label, image=img3, command=lambda: self.chooseWeapon(3, master), bg="#eac98f")
         phumano.image = img3
         phumano.grid(row=0, column=2, padx=6, pady=2)
 
-        pogro = Button(label, image=img4, command=lambda: self.chooseWeapon(4, master), bg="black")
+        pogro = Button(label, image=img4, command=lambda: self.chooseWeapon(4, master), bg="#eac98f")
         pogro.image = img4
         pogro.grid(row=0, column=3, padx=6, pady=2)
 
-        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(5, master), bg="black")
+        phada = Button(label, image=img5, command=lambda: self.chooseWeapon(5, master), bg="#eac98f")
         phada.image = img5
         phada.grid(row=0, column=4, padx=6, pady=2)
 
         # ****** Nombres *****
         
-        name1 = Label(label, text="Elfo", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name1 = Label(label, text="Elfo", font="courier 14 bold italic", fg="#eac98f", bg="#3a3a3a")
         name1.grid(row=1, column=0)
-        name2 = Label(label, text="Mago", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name2 = Label(label, text="Mago", font="courier 14 bold italic", fg="#eac98f", bg="#3a3a3a")
         name2.grid(row=1, column=1)
-        name3 = Label(label, text="Humano", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name3 = Label(label, text="Humano", font="courier 14 bold italic", fg="#eac98f", bg="#3a3a3a")
         name3.grid(row=1, column=2)
-        name4 = Label(label, text="Ogro", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name4 = Label(label, text="Ogro", font="courier 14 bold italic", fg="#eac98f", bg="#3a3a3a")
         name4.grid(row=1, column=3)
-        name5 = Label(label, text="Hada", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name5 = Label(label, text="Hada", font="courier 14 bold italic", fg="#eac98f", bg="#3a3a3a")
         name5.grid(row=1, column=4)
 
         # *** Adds the whole content that's on the label ***
@@ -71,15 +71,15 @@ class charChooserGUI:
         root.destroy()
         root2 = Tk()
         root2.title("Seleccionar Arma")
-        root2.configure(bg="#191919")
+        root2.configure(bg="#f29f3a")
         root2.minsize(width=1000, height=550)
 
         # **** Content ***
 
-        label = Label(bg="#3a3a3a")
+        label = Label(bg="#aa6612")
         # **** Titulo ****
 
-        title = Label(text="Seleccione su arma.", font="times 24 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        title = Label(text="Selecciona tu arma.", font="courier 24 bold italic", fg="#eac98f", bg="#aa6612")
         title.pack(pady=(50, 0))
 
         # ***** Imagenes ****
@@ -120,32 +120,32 @@ class charChooserGUI:
         personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze,
                                                                                  numweapon[1],
                                                                                  nCharVar.get(),
-                                                                                 root2), bg="black", activebackground="#222222")
+                                                                                 root2), bg="#eac98f", activebackground="#222222")
         personaje.image = imagen1
         personaje.grid(row=0, padx=10, pady=5)
         
         
-        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2), bg="black", activebackground="#222222")
+        personajev2 = Button(label, image=imagen2, command=lambda: self.createChar(raze, numweapon[2], nCharVar.get(), root2), bg="#eac98f", activebackground="#222222")
         personajev2.image = imagen2
         personajev2.grid(row=0, column=1, padx=10, pady=5)
         
         
         personajev3 = Button(label, image=imagen3, command=lambda: self.createChar(raze, numweapon[3], nCharVar.get(), root2), 
-                       bg="black", activebackground="#222222")
+                       bg="#eac98f", activebackground="#222222")
         personajev3.image = imagen3
         personajev3.grid(row=0, column=2, padx=10, pady=5)
 
         # ****** Nombres de las armas *****
 
-        name1 = Label(label, text=nameweapon[1], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name1 = Label(label, text=nameweapon[1], font="courier 10 bold italic", fg="#eac98f", bg="#3a3a3a")
         name1.grid(row=1, column=0)
-        name2 = Label(label, text=nameweapon[2], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name2 = Label(label, text=nameweapon[2], font="courier 10 bold italic", fg="#eac98f", bg="#3a3a3a")
         name2.grid(row=1, column=1)
-        name3 = Label(label, text=nameweapon[3], font="times 10 bold italic", fg="#20ef1c", bg="#3a3a3a")
+        name3 = Label(label, text=nameweapon[3], font="courier 10 bold italic", fg="#eac98f", bg="#3a3a3a")
         name3.grid(row=1, column=2)
 
         # *** Agrega todo el contenido que esta en el label  ***
-        nCharMsj = Label(label, text="Cuantos personajes desea", font="times 15 bold italic",
+        nCharMsj = Label(label, text="¿Cuántos personajes desea?", font="courier 15 bold italic",
                          fg="#20ef1c", bg="#222222")
         nCharMsj.grid(row=2, column=0, columnspan=2, sticky=E)
 
@@ -154,7 +154,7 @@ class charChooserGUI:
         nChar = ["1", "2"]
 
         nCharMenu = OptionMenu(label, nCharVar, *nChar)
-        nCharMenu.config(width=5, font="times 15 bold italic", fg="#20ef1c", bg="#2d2d2d",
+        nCharMenu.config(width=5, font="courier 15 bold italic", fg="#eac98f", bg="#2d2d2d",
                          highlightbackground="#000000", activebackground="#222222")
         nCharMenu.grid(row=2, column=2, pady=30)
 
@@ -345,6 +345,13 @@ class charChooserGUI:
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
 
+                if len(personaje1.listaDisparo)>0:
+                    for x in personaje1.listaDisparo:
+                        x.dibujar(ventana)
+                        x.recorrido()
+                        #x.colision(personaje1)
+                        if x.rect.left<-10:
+                            personaje1.listaDisparo.remove(x)
                 
                 
 
@@ -376,9 +383,13 @@ class charChooserGUI:
                     posX1 += velocidad
                     X1 += velocidad
                 if keys[K_SPACE]:
-                    personaje1.attack()
+                    x = posX
+                    y = posY
+                    personaje1.atacar(x,y)
                 elif keys[K_p]:
-                    personaje2.attack()
+                    x = posX1
+                    y = posY1
+                    personaje2.atacar(x,y)
                     
                 fuente = pygame.font.Font("fuente/fuente.ttf",30)
                 text1="Vida personaje 1: "+str(cont1)
@@ -397,7 +408,7 @@ class charChooserGUI:
 
 root = Tk()
 root.title("Escoger personaje")
-root.configure(bg="#191919")
+root.configure(bg="#f29f3a")
 
 escogerPersonaje = charChooserGUI(root)
 

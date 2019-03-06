@@ -5,6 +5,7 @@
 #Estas clases son el Producto y producto concreto de los personajes
 #del patron Factory Method
 from copy import deepcopy
+from disparo import *
 
 class Personaje():
 
@@ -13,6 +14,7 @@ class Personaje():
     escudo = None
     escudoNum = None
     objclone = None
+    listaDisparo=[]
 
     def __init__(self):
         pass
@@ -54,6 +56,9 @@ class Personaje():
     #metodo de prueba
     def hable(self):
         pass
+    def atacar (self,x,y):
+        pass
+        
 
     
 class Elfo(Personaje):
@@ -63,8 +68,9 @@ class Elfo(Personaje):
         print ("Legolas ataca!!")
         self.imagen = "imagenes/Elfo.png"
 
-    def attack(self):
-        self._Attack.attack()
+    def atacar(self,x,y):
+        misil = Misil(x,y)
+        self.listaDisparo.append(misil)
 
     # metodo de prueba
     def hable(self):
@@ -76,8 +82,9 @@ class Ogro(Personaje):
         print("soy un Ogro")
         self.imagen = "imagenes/Ogro.png"
 
-    def attack(self):
-        self._Attack.attack()
+    def atacar(self,x,y):
+        misil = Misil(x,y)
+        self.listaDisparo.append(misil)
 
     # metodo de prueba
     def hable(self):
@@ -89,8 +96,9 @@ class Hada(Personaje):
         print("Soy una Hada")
         self.imagen = "imagenes/Hada.png"
 
-    def attack(self):
-        self._Attack.attack()
+    def atacar(self,x,y):
+        misil = Misil(x,y)
+        self.listaDisparo.append(misil)
 
     # metodo de prueba
     def hable(self):
@@ -103,8 +111,9 @@ class Humano(Personaje):
         print("Soy un Humano")
         self.imagen = "imagenes/Humano.png"
 
-    def attack(self):
-        self._Attack.attack()
+    def atacar(self,x,y):
+        misil = Misil(x,y)
+        self.listaDisparo.append(misil)
 
     # metodo de prueba
     def hable(self):
@@ -116,8 +125,9 @@ class Mago(Personaje):
         print("Soy un Mago")
         self.imagen = "imagenes/Mago.png"
 
-    def attack(self):
-        self._Attack.attack()
+    def atacar(self,x,y):
+        misil = Misil(x,y)
+        self.listaDisparo.append(misil)
 
         
     # metodo de prueba
