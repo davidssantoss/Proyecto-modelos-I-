@@ -241,84 +241,108 @@ class charChooserGUI:
 
 
 
-            if (raze == 1) or (raze == 5):
-
+            if (raze == 1):
+                #pos arma
                 X = 90
                 Y = 310
+                #pos arma2
                 X1 = 340
                 Y1 = 310
-                X2 = 590
-                Y2 = 310
+                #pos per
                 posX = 100
                 posY = 350
+                #pos per2
                 posX1 = 350
                 posY1 = 350
-                posX2 = 600
-                posY2 = 350
+                #pos esc
                 positX = 200
                 positY = 470
+                #pos esc2
                 positX1 = 450
                 positY1 = 470
-                positX2 = 485
-                positY2 = 260
+                
 
             if raze == 2:
-                X = 28
+                #pos arma
+                X = 400
                 Y = 345
-                X1 = 278
+                #pos arma2
+                X1 = 118
                 Y1 = 345
-                X2 = 528
-                Y2 = 345
-                posX = 150
+                #pos per
+                posX = 500
                 posY = 350
-                posX1 = 400
+                #pos per2
+                posX1 = 150
                 posY1 = 350
-                posX2 = 650
-                posY2 = 350
-                positX = 30
-                positY = 280
-                positX1 = 280
-                positY1 = 280
-                positX2 = 530
-                positY2 = 260
+                #pos esc
+                positX = 620
+                positY = 480
+                #pos esc2
+                positX1 = 290
+                positY1 = 480
+                
             if raze == 3:
+                #pos arma
                 X = 140
                 Y = 440
+                #pos arma 2 per
                 X1 = 390
                 Y1 = 440
-                X2 = 640
-                Y2 = 440
+                #pos per
                 posX = 100
                 posY = 350
+                #pos per2
                 posX1 = 350
                 posY1 = 350
-                posX2 = 600
-                posY2 = 350
+                #pos esc
                 positX = 25
-                positY = 280
+                positY = 400
+                #pos esc2
                 positX1 = 275
-                positY1 = 280
-                positX2 = 525
-                positY2 = 260
+                positY1 = 400
+                
             if raze == 4:
+                #pos arma
                 X = 170
                 Y = 310
+                #pos arma2
                 X1 = 420
                 Y1 = 310
-                X2 = 670
-                Y2 = 310
+                #pos per
                 posX = 100
                 posY = 350
+                #pos pers2
                 posX1 = 350
                 posY1 = 350
-                posX2 = 600
-                posY2 = 350
+                #pos esc
                 positX = -15
                 positY = 280
+                #pos esc2
                 positX1 = 235
                 positY1 = 280
-                positX2 = 485
-                positY2 = 240
+                
+            if (raze == 5):
+                #pos arma
+                X = 90
+                Y = 310
+                #pos arma2
+                X1 = 340
+                Y1 = 310
+                #pos per
+                posX = 100
+                posY = 350
+                #pos per2
+                posX1 = 350
+                posY1 = 350
+                #pos esc
+                positX = 200
+                positY = 470
+                #pos esc2
+                positX1 = 450
+                positY1 = 470
+                
+        
 
             fondo = pygame.image.load("imagenes/fondo1.jpg")
             boton2 = Boton(fondo,fondo,0,0)
