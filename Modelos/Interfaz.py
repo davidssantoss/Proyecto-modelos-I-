@@ -380,7 +380,7 @@ class charChooserGUI:
                 if len(personaje2.listaDisparo)>0:
                     for x in personaje2.listaDisparo:
                         x.dibujar(ventana)
-                        x.recorrido2()
+                        x.recorrido()
                         #x.colision(personaje1)
                         if x.rect.right<10:
                             personaje2.listaDisparo.remove(x)
@@ -415,21 +415,35 @@ class charChooserGUI:
                     posX1 += velocidad
                     X1 += velocidad
                 if keys[K_SPACE]:
-                    x = posX
-                    y = posY
-                    personaje1.atacar(x,y)
+                    xd = posX
+                    yd = posY+100
+                    personaje1.atacar(xd,yd)
+                    cont2=cont2-10
+                    print("vida 2:"+ str(cont2))
+                    if cont2==0:
+                        print("muerto 2")
+                        pygame.quit()
+                        sys.exit()
+                        pintar_rect=False
                 elif keys[K_p]:
-                    x = posX1
-                    y = posY1
-                    personaje2.atacar(x,y)
+                    xd = posX1
+                    yd = posY1+100
+                    personaje2.atacar(xd,yd)
+                    cont1=cont1-10
+                    print("vida 1:"+ str(cont1))
+                    if cont1==0:
+                        print("muerto 1")
+                        pygame.quit()
+                        sys.exit()
+                        pintar_rect=False
                     
                 fuente = pygame.font.Font("fuente/fuente.ttf",30)
                 text1="Vida personaje 1: "+str(cont1)
                 text2="Vida personaje 2: "+str(cont2)
                 texto1 = fuente.render(text1,1,(155,127,22))
                 texto2 = fuente.render(text2,1,(155,200,22))
-                ventana.blit(texto1,(500,50))
-                ventana.blit(texto2,(20,50))
+                ventana.blit(texto1,(20,50))
+                ventana.blit(texto2,(500,50))
                 pygame.display.flip()
 
                 pygame.display.update()
