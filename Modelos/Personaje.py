@@ -4,6 +4,7 @@
 
 #Estas clases son el Producto y producto concreto de los personajes
 #del patron Factory Method
+from copy import deepcopy
 
 class Personaje():
 
@@ -11,9 +12,13 @@ class Personaje():
     imagen = None
     escudo = None
     escudoNum = None
+    objclone = None
 
     def __init__(self):
         pass
+
+    def clone(self):
+        return deepcopy(self)
     
     def setArma(self, arma):
         self.arma = arma
@@ -46,6 +51,10 @@ class Personaje():
     def getEscudoNum(self):
         return self.escudoNum
 
+    #metodo de prueba
+    def hable(self):
+        pass
+
     
 class Elfo(Personaje):
 
@@ -57,6 +66,10 @@ class Elfo(Personaje):
     def attack(self):
         self._Attack.attack()
 
+    # metodo de prueba
+    def hable(self):
+        return ("yo soy elfo")
+
 class Ogro(Personaje):
     def __init__(self, attack):
         self._Attack = attack
@@ -65,6 +78,10 @@ class Ogro(Personaje):
 
     def attack(self):
         self._Attack.attack()
+
+    # metodo de prueba
+    def hable(self):
+        return ("yo soy ogro")
 
 class Hada(Personaje):
     def __init__(self, attack):
@@ -75,6 +92,11 @@ class Hada(Personaje):
     def attack(self):
         self._Attack.attack()
 
+    # metodo de prueba
+    def hable(self):
+        return ("yo soy Hada")
+        
+
 class Humano(Personaje):
     def __init__(self, attack):
         self._Attack = attack
@@ -83,6 +105,10 @@ class Humano(Personaje):
 
     def attack(self):
         self._Attack.attack()
+
+    # metodo de prueba
+    def hable(self):
+        return ("yo soy humano")
 
 class Mago(Personaje):
     def __init__(self, attack):
@@ -94,3 +120,6 @@ class Mago(Personaje):
         self._Attack.attack()
 
         
+    # metodo de prueba
+    def hable(self):
+        return ("yo soy mago")

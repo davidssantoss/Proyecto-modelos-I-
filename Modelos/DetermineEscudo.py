@@ -15,7 +15,8 @@ class DeterminarEscudo():
         pass
 
     def crearEscudo(self, number):
-        self.crearEscudo = {1: ElfoEscudoCreator(), 2: HadaEscudoCreator(), 3:HumanoEscudoCreator(), 4:OgroEscudoCreator(),
+        self.crearescudo = {1: ElfoEscudoCreator(), 2: HadaEscudoCreator(),
+                            3:HumanoEscudoCreator(), 4:OgroEscudoCreator(),
                             5:MagoEscudoCreator()}
 
     def getEscudo(self):

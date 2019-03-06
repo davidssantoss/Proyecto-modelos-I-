@@ -18,5 +18,8 @@ class Director():
 
     def BuildPersonaje(self, personaje, arma, escudo):
         self.constructor.buildPersonaje(personaje)
+        print("paso: ", personaje)
+        print("personajeBuilder: ", self.constructor.personaje)
         self.constructor.buildArma(arma)
+        
         self.constructor.buildEscudo(escudo)

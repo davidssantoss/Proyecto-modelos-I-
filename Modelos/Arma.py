@@ -6,11 +6,11 @@
 #del patron Factory Method
 
 class Arma():
-    nombreArma = None
-    imagenArma = None
+    nombrearma = None
+    imagenarma = None
 
     def getNombreArma (self):
-        return self.nombreArma
+        return self.nombrearma
 
     def __init__(self):
         pass
@@ -19,78 +19,78 @@ class Arma():
         pass
 
     def getImageArma(self):
-        return self.imagenArma
+        return self.imagenarma
 
 
 class ArmaElfo(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Elfo"
-        self.imagenArma="imagenes/ArmaElfo.png"
+        self.nombrearma = "Arco Elfico"
+        self.imagenarma = "imagenes/ArmaElfo.png"
     def showWeapon(self):
         pass
 
 class ArmaElfo2(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Elfo"
-        self.imagenArma="imagenes/ArmaElfo2.png"
+        self.nombrearma = "Cetro Elfico"
+        self.imagenarma = "imagenes/ArmaElfo2.png"
     def showWeapon(self):
         pass
     
 class ArmaElfo3(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Elfo"
-        self.imagenArma="imagenes/ArmaElfo3.png"
+        self.nombrearma = "Cetro elfico reforzado"
+        self.imagenarma = "imagenes/ArmaElfo3.png"
     def showWeapon(self):
         pass
 
 
 class ArmaHada(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma de la Hada"
-        self.imagenArma="imagenes/ArmaHada.png"
+        self.nombrearma = "varita"
+        self.imagenarma = "imagenes/ArmaHada.png"
     def showWeapon(self):
         pass
 
 class ArmaHumano(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Humano"
-        self.imagenArma="imagenes/ArmaHumano.png"
+        self.nombrearma = "Sable mortifero"
+        self.imagenarma = "imagenes/ArmaHumano.png"
     def showWeapon(self):
         pass
 
 class ArmaHumano2(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Humano"
-        self.imagenArma="imagenes/ArmaHumano2.png"
+        self.nombrearma = "Maza"
+        self.imagenarma = "imagenes/ArmaHumano2.png"
     def showWeapon(self):
         pass
 
 class ArmaHumano3(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Humano"
-        self.imagenArma="imagenes/ArmaHumano3.png"
+        self.nombrearma = "Lanza sangrienta"
+        self.imagenarma = "imagenes/ArmaHumano3.png"
     def showWeapon(self):
         pass
 
 
 class ArmaOgro(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Ogro"
-        self.imagenArma="imagenes/ArmaOgro.png"
+        self.nombrearma = "Martillo de caverna"
+        self.imagenarma = "imagenes/ArmaOgro.png"
     def showWeapon(self):
         pass
 
 class ArmaOgro2(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Ogro"
-        self.imagenArma="imagenes/ArmaOgro2.png"
+        self.nombrearma = "Daga mortal"
+        self.imagenarma = "imagenes/ArmaOgro2.png"
     def showWeapon(self):
         pass
 
 class ArmaOgro3(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Ogro"
-        self.imagenArma="imagenes/ArmaOgro3.png"
+        self.nombrearma = "Hacha maldita"
+        self.imagenarma = "imagenes/ArmaOgro3.png"
     def showWeapon(self):
         pass
 
@@ -98,21 +98,21 @@ class ArmaOgro3(Arma):
 
 class ArmaMago(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Mago"
-        self.imagenArma="imagenes/ArmaMago.png"
+        self.nombrearma = "Baculo"
+        self.imagenarma = "imagenes/ArmaMago.png"
     def showWeapon(self):
         pass
 
 class ArmaMago2(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Mago"
-        self.imagenArma="imagenes/ArmaMago2.png"
+        self.nombrearma = "Espada maldita"
+        self.imagenarma = "imagenes/ArmaMago2.png"
     def showWeapon(self):
         pass
 
 class ArmaMago3(Arma):
     def __init__(self):
-        self.nombreArma="Esta es la Arma del Mago"
-        self.imagenArma="imagenes/ArmaMago3.png"
+        self.nombrearma = "Martillo del dragon"
+        self.imagenarma = "imagenes/ArmaMago3.png"
     def showWeapon(self):
         pass

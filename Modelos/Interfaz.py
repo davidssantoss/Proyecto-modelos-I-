@@ -31,6 +31,7 @@ class charChooserGUI:
         pelfo = Button(label, image=img1, command=lambda: self.chooseWeapon(1,master), bg="black")
         pelfo.image = img1
         pelfo.grid(row=0, padx=6, pady=2)
+        print("pelfo: ",pelfo)
 
         pmago = Button(label, image=img2, command=lambda: self.chooseWeapon(2, master), bg="black")
         pmago.image = img2
@@ -49,7 +50,7 @@ class charChooserGUI:
         phada.grid(row=0, column=4, padx=6, pady=2)
 
         # ****** Nombres *****
-
+        
         name1 = Label(label, text="Elfo", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
         name1.grid(row=1, column=0)
         name2 = Label(label, text="Mago", font="times 14 bold italic", fg="#20ef1c", bg="#3a3a3a")
@@ -66,7 +67,7 @@ class charChooserGUI:
 
 
     def chooseWeapon(self, raze, root):
-
+        print("chosePeronaje raze: ", raze)
         root.destroy()
         root2 = Tk()
         root2.title("Seleccionar Arma")
@@ -112,11 +113,14 @@ class charChooserGUI:
             imagen1 = PhotoImage(file="imagenes\ArmaHada.png")
             imagen2 = PhotoImage(file="imagenes\ArmaMago2.png")
             imagen3 = PhotoImage(file="imagenes\ArmaOgro2.png")
-            nameweapon = {1: "varita", 2: "Daga bendita", 3: "Sable sabio"}
+            nameweapon = {1: "varita", 2: "Espada maldita", 3: "Daga mortal"}
             numweapon = {1: 4, 2: 11, 3: 9}
         #Se manejan tipos de personajes poniendo las diferentes armas
-        
-        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze, numweapon[1], nCharVar.get(), root2), bg="black", activebackground="#222222")
+        #print ("seleccionada",raze)
+        personaje = Button(label, image=imagen1, command=lambda: self.createChar(raze,
+                                                                                 numweapon[1],
+                                                                                 nCharVar.get(),
+                                                                                 root2), bg="black", activebackground="#222222")
         personaje.image = imagen1
         personaje.grid(row=0, padx=10, pady=5)
         
@@ -146,7 +150,7 @@ class charChooserGUI:
         nCharMsj.grid(row=2, column=0, columnspan=2, sticky=E)
 
         nCharVar = StringVar(label)
-        nCharVar.set("1")
+        nCharVar.set("2")
         nChar = ["1", "2"]
 
         nCharMenu = OptionMenu(label, nCharVar, *nChar)
@@ -156,8 +160,7 @@ class charChooserGUI:
 
         label.pack()
 
-    def createChar(self, raza, arma, nchar, root2):
-
+    def createChar(self, raze, arma, nchar, root2):
 
 
         root2.destroy()
@@ -165,9 +168,11 @@ class charChooserGUI:
         creacion = EnlistarPersonaje()
         creacion.crearArma(arma)
         creacion.crearEscudo()
-        creacion.crearPersonaje(raza)
-
+        creacion.crearPersonaje(raze)
+        
         creacion.BuildPersonaje()
+        print("create char")
+
 
         personaje1 = None
         personaje2 = None
@@ -178,12 +183,12 @@ class charChooserGUI:
         if nchar == "2":
             personaje1 = creacion.clonePersonaje()
             personaje2 = creacion.clonePersonaje()
-        imweapon = personaje1.getArma().getImageArma()
-        print(soyarma)
-        imchar = personaje1.getImagen()
-        print(soy)
-        imAurora = personaje1.getEscudo()
-        print(soyescudo)
+        imArma = personaje1.getArma().getImageArma()
+        print(imArma)
+        imPers = personaje1.getImagen()
+        print(imPers)
+        imEscudo = personaje1.getEscudo()
+        print(imEscudo)
 
 
         class BotonAtacar(pygame.sprite.Sprite):
@@ -229,10 +234,10 @@ class charChooserGUI:
             pY=0
             cont1=1000
             cont2=1000
-            imagen_arma = pygame.image.load(imweapon)
+            imagen_arma = pygame.image.load(imArma)
 
-            imagen_personaje = pygame.image.load(imchar)
-            imagen_aurora = pygame.image.load(imAurora)
+            imagen_personaje = pygame.image.load(imPers)
+            imagen_escudo = pygame.image.load(imEscudo)
 
 
 
@@ -315,7 +320,7 @@ class charChooserGUI:
                 positX2 = 485
                 positY2 = 240
 
-            fondo = pygame.image.load("fondo.jpg")
+            fondo = pygame.image.load("imagenes/fondo1.jpg")
             boton2 = Boton(fondo,fondo,0,0)
             velocidad = 5
             verde = (0, 255, 0)
@@ -328,14 +333,14 @@ class charChooserGUI:
                 ventana.fill(verde)
                 ventana.blit(fondo, (0, 0))
                 if nchar == "1":
-                    ventana.blit(imagen_aurora, (positX1, positY1))
+                    ventana.blit(imagen_escudo, (positX1, positY1))
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
                 if nchar == "2":
-                    ventana.blit(imagen_aurora, (positX, positY))
+                    ventana.blit(imagen_escudo, (positX, positY))
                     ventana.blit(imagen_personaje, (posX, posY))
                     ventana.blit(imagen_arma, (X, Y))
-                    ventana.blit(imagen_aurora, (positX1, positY1))
+                    ventana.blit(imagen_escudo, (positX1, positY1))
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
                 

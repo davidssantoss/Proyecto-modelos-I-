@@ -12,19 +12,19 @@ from Personaje import *
 
 
 class EnlistarPersonaje:
-    determinarPersonaje = None
-    determinarArma = None
+    determinarpersonaje = None
+    determinararma = None
     determinarescudo = None
-    constructorPersonaje = None
-    armarPersonaje = None
+    constructorpersonaje = None
+    armarpersonaje = None
     personajesclonados = None
 
     def __init__(self):
-        self.determinarPersonaje = DeterminarPersonaje()
-        self.determinarArma = DeterminarArma()
+        self.determinarpersonaje = DeterminarPersonaje()
+        self.determinararma = DeterminarArma()
         self.determinarescudo = Personaje()
-        self.constructorPersonaje = PersonajeBuilder()
-        self.armarPersonaje = Director()
+        self.constructorpersonaje = PersonajeBuilder()
+        self.armarpersonaje = Director()
 
 
     def generarChakra(func):
@@ -35,7 +35,7 @@ class EnlistarPersonaje:
         return wrapper
 
     def crearArma(self, number):
-        self.determinarArma.crearArma(number)
+        self.determinararma.crearArma(number)
 
 
     @generarChakra  #Patron decorator
@@ -44,14 +44,17 @@ class EnlistarPersonaje:
         self.determinarescudo.setEscudo(number)
 
     def crearPersonaje(self, number):
-        self.determinarPersonaje.crearPersonaje(number)
+        self.determinarpersonaje.crearPersonaje(number)
 
     def BuildPersonaje(self):
-        self.armarPersonaje.setBuilder(self.constructorPersonaje)
-        self.armarPersonaje.BuildPersonaje(self.determinarPersonaje.getPersonaje(), self.determinarArma.getArma(), self.determinarescudo.getEscudoNum())
+        self.armarpersonaje.setBuilder(self.constructorpersonaje)
+        self.armarpersonaje.BuildPersonaje(self.determinarpersonaje.getPersonaje(),
+                                           self.determinararma.getArma(),
+                                           self.determinarescudo.getEscudoNum())
+        
 
     def clonePersonaje(self):
-        self.personajesclonados = self.armarPersonaje.getPersonaje()
+        self.personajesclonados = self.armarpersonaje.getPersonaje()
         return self.personajesclonados.clone()
 
 

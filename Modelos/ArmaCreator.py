@@ -23,7 +23,7 @@ class ArmaCreador():
     def __init__(self):
         pass
 
-    def crearArma(self):
+    def CrearArma(self):
         return self.factoryMethod()
 
     def factoryMethod(self):

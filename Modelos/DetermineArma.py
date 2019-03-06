@@ -17,17 +17,17 @@ from ArmaCreator import ArmaMagoCreador2
 from ArmaCreator import ArmaMagoCreador3
 
 class DeterminarArma():
-    crearArma = None
+    creararma = None
     arma = None
     def __init__(self):
         pass
 
     def crearArma(self, number):
-        self.crearArma = {1: ArmaElfoCreador(), 2:ArmaElfoCreador2(), 3:ArmaElfoCreador3(),
+        self.creararma = {1: ArmaElfoCreador(), 2:ArmaElfoCreador2(), 3:ArmaElfoCreador3(),
                           4:ArmaHadaCreador(), 5:ArmaHumanoCreador(), 6:ArmaHumanoCreador2(),
                           7:ArmaHumanoCreador3(), 8:ArmaOgroCreador(), 9:ArmaOgroCreador2(),
                           10:ArmaMagoCreador(), 11:ArmaMagoCreador2(), 12:ArmaMagoCreador3()}
-        self.arma = self.crearArma[number].crearArma()
+        self.arma = self.creararma[number].CrearArma()
         print(str(self.arma))
 
     def getArma(self):
