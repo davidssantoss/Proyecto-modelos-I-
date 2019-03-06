@@ -171,7 +171,7 @@ class charChooserGUI:
         creacion.crearPersonaje(raze)
         
         creacion.BuildPersonaje()
-        print("create char")
+        print("crear personaje")
 
 
         personaje1 = None
@@ -255,10 +255,10 @@ class charChooserGUI:
                 posY1 = 350
                 posX2 = 600
                 posY2 = 350
-                positX = -15
-                positY = 260
-                positX1 = 235
-                positY1 = 260
+                positX = 200
+                positY = 470
+                positX1 = 450
+                positY1 = 470
                 positX2 = 485
                 positY2 = 260
 
@@ -276,9 +276,9 @@ class charChooserGUI:
                 posX2 = 650
                 posY2 = 350
                 positX = 30
-                positY = 260
+                positY = 280
                 positX1 = 280
-                positY1 = 260
+                positY1 = 280
                 positX2 = 530
                 positY2 = 260
             if raze == 3:
@@ -295,9 +295,9 @@ class charChooserGUI:
                 posX2 = 600
                 posY2 = 350
                 positX = 25
-                positY = 260
+                positY = 280
                 positX1 = 275
-                positY1 = 260
+                positY1 = 280
                 positX2 = 525
                 positY2 = 260
             if raze == 4:
@@ -314,9 +314,9 @@ class charChooserGUI:
                 posX2 = 600
                 posY2 = 350
                 positX = -15
-                positY = 240
+                positY = 280
                 positX1 = 235
-                positY1 = 240
+                positY1 = 280
                 positX2 = 485
                 positY2 = 240
 
@@ -337,12 +337,15 @@ class charChooserGUI:
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
                 if nchar == "2":
+                    #imagen_personaje2 = pygame.transform.flip(imagen_personaje2, True, False)
                     ventana.blit(imagen_escudo, (positX, positY))
                     ventana.blit(imagen_personaje, (posX, posY))
                     ventana.blit(imagen_arma, (X, Y))
                     ventana.blit(imagen_escudo, (positX1, positY1))
                     ventana.blit(imagen_personaje, (posX1, posY1))
                     ventana.blit(imagen_arma, (X1, Y1))
+
+                
                 
 
                 #ventana.blit(wood, (450,-70))
@@ -377,13 +380,13 @@ class charChooserGUI:
                 elif keys[K_p]:
                     personaje2.attack()
                     
-                fuente = pygame.font.Font("fuente/fuente.ttf",50)
-                text1="Vida del personaje 1:"+str(cont1)
-                text2="Vida del personaje 2:"+str(cont2)
+                fuente = pygame.font.Font("fuente/fuente.ttf",30)
+                text1="Vida personaje 1: "+str(cont1)
+                text2="Vida personaje 2: "+str(cont2)
                 texto1 = fuente.render(text1,1,(155,127,22))
-                texto2 = fuente.render(text2,1,(155,155,22))
+                texto2 = fuente.render(text2,1,(155,200,22))
                 ventana.blit(texto1,(500,50))
-                ventana.blit(texto2,(500,80))
+                ventana.blit(texto2,(20,50))
                 pygame.display.flip()
 
                 pygame.display.update()

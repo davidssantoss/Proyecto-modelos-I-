@@ -12,14 +12,22 @@ from Personaje import Mago
 #Estas clases son el Creador y creador concreto de los personajes
 #del patron Factory Method
 class Strategy():
+    
     damage = 10
 
     def __init__(self,func=None):
+        self.listaDisparo = []
         if func:
              self.attack = func
 
     def attack(self):
         print("Attacking with " + str(self.damage) + " hit points")
+
+class AtacarA(Strategy):
+    def atacar(self):
+        print("Attacking with " + str(self.damage) + " hit points")
+        
+        
 
 
 class PersonajeCreator():
@@ -35,7 +43,7 @@ class ElfoCreator(PersonajeCreator):
     def __init__ (self):
         pass
     def factoryMethod (self):
-        return Elfo(Strategy())
+        return Elfo(Strategy(AtacarA.atacar))
         pass
         # return Hada(un ataque)
         
